@@ -1,0 +1,44 @@
+export const users = [
+  {
+    id: 1,
+    name: "Leanne Graham",
+    email: "Sincere@april.biz",
+    city: "Gwenborough",
+    company: "Romaguera-Crona",
+  },
+  {
+    id: 2,
+    name: "Ervin Howell",
+    email: "Shanna@melissa.tv",
+    city: "Wisokyburgh",
+    company: "Deckow-Crist",
+  },
+  {
+    id: 3,
+    name: "Clementine Bauch",
+    email: "Nathan@yesenia.net",
+    city: "McKenziehaven",
+    company: "Romaguera-Jacobson",
+  },
+  {
+    id: 4,
+    name: "Patricia Lebsack",
+    email: "Julianne.OConner@kory.org",
+    city: "South Elvis",
+    company: "Robel-Corkery",
+  },
+  {
+    id: 5,
+    name: "Chelsey Dietrich",
+    email: "Lucio_Hettinger@annie.ca",
+    city: "Roscoeview",
+    company: "Keebler LLC",
+  },
+  {
+    id: 6,
+    name: "Mrs. Dennis Schulist",
+    email: "Karley_Dach@jasper.info",
+    city: "South Christy",
+    company: "Considine-Lockman",
+  },
+];
