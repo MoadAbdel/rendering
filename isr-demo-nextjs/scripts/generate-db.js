@@ -1,0 +1,82 @@
+// Génère src/data/db.json à partir de données de base.
+// json-server sert ensuite ce fichier comme API REST (/products, /users).
+import { writeFileSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const products = [
+  {
+    id: 1,
+    slug: "smartphone-pro-x",
+    name: "Smartphone Pro X",
+    category: "Électronique",
+    price: 899.99,
+    rating: 4.6,
+    stock: 25,
+    image: "https://picsum.photos/seed/smartphone-pro-x/600/400",
+    description: "Smartphone haut de gamme avec écran OLED, triple capteur photo et charge rapide.",
+    features: ["Écran OLED 6.5\"", "128 Go de stockage", "Triple capteur photo", "Charge rapide 65W"],
+  },
+  {
+    id: 2,
+    slug: "laptop-ultrabook-15",
+    name: "Laptop Ultrabook 15",
+    category: "Électronique",
+    price: 1299.0,
+    rating: 4.4,
+    stock: 12,
+    image: "https://picsum.photos/seed/laptop-ultrabook-15/600/400",
+    description: "Ultrabook léger et puissant, idéal pour le travail nomade.",
+    features: ["Écran 15\" Full HD", "16 Go RAM", "SSD 512 Go", "Autonomie 12h"],
+  },
+  {
+    id: 3,
+    slug: "casque-audio-sans-fil",
+    name: "Casque Audio Sans Fil",
+    category: "Audio",
+    price: 149.99,
+    rating: 4.7,
+    stock: 60,
+    image: "https://picsum.photos/seed/casque-audio-sans-fil/600/400",
+    description: "Casque Bluetooth à réduction de bruit active.",
+    features: ["Réduction de bruit active", "Autonomie 30h", "Bluetooth 5.3", "Micro intégré"],
+  },
+  {
+    id: 4,
+    slug: "montre-connectee-sport",
+    name: "Montre Connectée Sport",
+    category: "Accessoires",
+    price: 199.99,
+    rating: 4.1,
+    stock: 40,
+    image: "https://picsum.photos/seed/montre-connectee-sport/600/400",
+    description: "Montre connectée avec GPS intégré, capteur cardio, 100+ modes sport et étanche 50m.",
+    features: ["GPS intégré", "Cardiofréquencemètre", "Étanche 50m", "Autonomie 14 jours"],
+  },
+  {
+    id: 5,
+    slug: "enceinte-bluetooth-portable",
+    name: "Enceinte Bluetooth Portable",
+    category: "Audio",
+    price: 79.99,
+    rating: 4.3,
+    stock: 55,
+    image: "https://picsum.photos/seed/enceinte-bluetooth-portable/600/400",
+    description: "Enceinte portable étanche avec un son puissant.",
+    features: ["Étanche IPX7", "Autonomie 20h", "Bluetooth 5.0", "Basses renforcées"],
+  },
+];
+
+const users = [
+  { id: 1, name: "Leanne Graham", email: "Sincere@april.biz", city: "Gwenborough", company: "Romaguera-Crona" },
+  { id: 2, name: "Ervin Howell", email: "Shanna@melissa.tv", city: "Wisokyburgh", company: "Deckow-Crist" },
+  { id: 3, name: "Clementine Bauch", email: "Nathan@yesenia.net", city: "McKenziehaven", company: "Romaguera-Jacobson" },
+  { id: 4, name: "Patricia Lebsack", email: "Julianne.OConner@kory.org", city: "South Elvis", company: "Robel-Corkery" },
+];
+
+const db = { products, users };
+
+writeFileSync(join(__dirname, "..", "src", "data", "db.json"), JSON.stringify(db, null, 2));
+console.log("✅ src/data/db.json généré avec", products.length, "produits et", users.length, "utilisateurs");
